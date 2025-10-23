@@ -1,17 +1,8 @@
 version: "3.8"
 services:
   web:
-    image: php:8.2-apache
+    image: nginx:alpine
     ports:
       - "8080:80"
     volumes:
-      - ./public:/var/www/html
-      - ./css:/var/www/html/css
-
-  db:
-    image: mysql:8
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: demo
-      MYSQL_USER: Mohamed
-      MYSQL_PASSWORD: 123456789
+      - ./public:/usr/share/nginx/html
